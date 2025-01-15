@@ -9,10 +9,10 @@ YOKO = 1200
 TITLE = "TAKOYAKI OISHI"
 # ディレクトリを設定しよう！BASE_DIRとかでいいよ
 BASE_DIR = os.path.dirname(__file__)
-# 画像のディレクトリを設定
-IMG_DIR = os.path.join(BASE_DIR, "画像のディレクトリの名前！")
+# 画像のディレクトリ=フォルダをかっこよく言った言葉を設定
+IMG_DIR = os.path.join(BASE_DIR, "imgs")
 # プレイヤーの画像を指定
-PLAYER_DIR = os.path.join(IMG_DIR, "使いたい画像の名前！！")
+PLAYER_DIR = os.path.join(IMG_DIR, "blue_neko.png")
 """
 PART01
 """
@@ -54,6 +54,7 @@ class Player(pygame.sprite.Sprite):
         """
         ここ
         """
+        self.image = pygame.Surface((256,256))
         # 画像のサイズと同じキャンバスを用意
         """
         PART03
@@ -64,6 +65,7 @@ class Player(pygame.sprite.Sprite):
         """
         ここ
         """
+        gazou = pygame.image.load(PLAYER_DIR).convert()
         """
         PART04
         """
@@ -73,6 +75,7 @@ class Player(pygame.sprite.Sprite):
         """
         ここ
         """
+        self.image.blit(gazou,(0,0),(0,0,256,256))
         """
         PART05
         背景色を透明にする
